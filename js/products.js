@@ -1,5 +1,91 @@
 const productArray = [
     {
+        // SNUG CARRIER
+        name: "Snug Carrier",
+        type: "Lightweight carrier",
+        description: "A lightweight, soft and ergonomic carrier for both you and your baby. The carrier is adjustable to fit a growing baby, with a low seat and neck support for the first 6 months of your baby's life.",
+        price: {
+            dollar: {
+                amount: 37.99,
+                currency: "$"
+            },
+            euro: {
+                amount: 31.99,
+                currency: "€",
+            },
+            discountpct: 0,
+        },
+        positions: "Front, front-low, front-facing and back",
+        machinewash: true,
+        tumbledry: false,
+        age: {
+            months: {
+                min: "0",
+                max: "36",
+            },
+        },
+        weight: {
+            min: {
+                kg: 3,
+                lb: 6.5,
+            },
+            max: {
+                kg: 20,
+                lb: 44,
+            },
+        },
+        materials: "85% polyester, 15% cotton",
+        image: {
+            sm: "assets/images/baby-carrier-infant-nature_sm.jpg",
+            alt: "Mother with a baby in a Snug Carrier",
+        },
+        stock: 0,
+        id: "x0001"
+    },
+    {
+        //STURDY SNUG
+        name: "Sturdy Snug",
+        type: "Framed carrier",
+        description: "A stiff aluminium frame carrier perfect for hiking. Comfortable harness with adjustable seat height and foot bars to fit a growing child. 15L zipped back compartment.",
+        price: {
+            dollar: {
+                amount: 69.99,
+                currency: "$"
+            },
+            euro: {
+                amount: 59.99,
+                currency: "€",
+            },
+            discountpct: 10,
+        },
+        positions: "Back only",
+        machinewash: false,
+        tumbledry: false,
+        age: {
+            months: {
+                min: "6",
+                max: "48",
+            },
+        },
+        weight: {
+            min: {
+                kg: 7,
+                lb: 15,
+            },
+            max: {
+                kg: 25,
+                lb: 55,
+            },
+        },
+        materials: "60% polyester, 20% cotton, 10% nylon, 10% aluminium.",
+        image: {
+            sm: "assets/images/baby-carrier-sturdy_sm.jpg",
+            alt: "Child in a Sturdy Snug getting carried through the forest",
+        },
+        stock: 40,
+        id: "x0002"
+    },
+    {
         // SNUG BABY SLING
         name: "Snug Baby Sling",
         type: "Sling",
@@ -17,10 +103,12 @@ const productArray = [
         },
         positions: ["Comes with a guide on how to tie 6 different types of sling, try out which ones suits you and your baby best!"],
         machinewash: true,
-        tumbledry: false,
+        tumbledry: true,
         age: {
-            min: "0 months",
-            max: "36 months",
+            months: {
+                min: "0",
+                max: "36",
+            },
         },
         weight: {
             min: {
@@ -33,86 +121,14 @@ const productArray = [
             },
         },
         materials: "95% cotton, 5% lycra",
-        image: "../assets/images/baby-sling.jpg",
-        stock: 49,
-        id: "x0001"
-    },
-    {
-        // SNUG CARRIER
-        name: "Snug Carrier",
-        type: "Lightweight carrier",
-        description: "A lightweight, soft and ergonomic carrier for both you and your baby. The carrier is adjustable to fit a growing baby, with a low seat and neck support for the first 6 months of your baby's life.",
-        price: {
-            dollar: {
-                amount: 37.99,
-                currency: "$"
-            },
-            euro: {
-                amount: 31.99,
-                currency: "€",
-            },
-            discountpct: 0,
+        image: {
+            sm: "assets/images/baby-sling_sm.jpg",
+            alt: "Mother in the forest with her baby in a Snug Sling",
         },
-        positions: ["front", "front-infant", "front-forward", "back"],
-        machinewash: true,
-        tumbledry: false,
-        age: {
-            min: "0 months",
-            max: "36 months",
-        },
-        weight: {
-            min: {
-                kg: 3,
-                lb: 6.5,
-            },
-            max: {
-                kg: 20,
-                lb: 44,
-            },
-        },
-        materials: "85% polyester, 15% cotton",
-        image: "../assets/images/baby-carrier-infant-nature.jpg",
-        stock: 69,
-        id: "x0002"
-    },
-    {
-        //SNUG STURDY
-        name: "Sturdy Snug",
-        type: "Framed carrier",
-        description: "A stiff aluminium frame carrier perfect for hiking. Comfortable harness with adjustable seat height and foot bars to fit a growing child. 15L zipped back compartment.",
-        price: {
-            dollar: {
-                amount: 69.99,
-                currency: "$"
-            },
-            euro: {
-                amount: 59.99,
-                currency: "€",
-            },
-            discountpct: 10,
-        },
-        positions: ["back"],
-        machinewash: true,
-        tumbledry: false,
-        age: {
-            min: "6 months",
-            max: "48 months",
-        },
-        weight: {
-            min: {
-                kg: 7,
-                lb: 15,
-            },
-            max: {
-                kg: 25,
-                lb: 55,
-            },
-        },
-        materials: "60% polyester, 20% cotton, 10% nylon, 10% aluminium.",
-        image: "../assets/images/baby-carrier-sturdy.jpg",
-        stock: 18,
+        stock: 105,
         id: "x0003"
     }
 ]
 
+console.log(productArray);
 
