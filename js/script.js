@@ -17,7 +17,7 @@ function createHTML(myArray) {
             `
             <a href="${link}" class="product--display" style="background-image: url(${image})">
                 <h2 class="product--text shadow">${name}</h2>
-                <p class="${sale}">sale</p>
+                <p class="${sale}"><i class="fas fa-comment-dollar"> sale</i></p>
             </a>
             `
     }

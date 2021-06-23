@@ -32,32 +32,16 @@ li {
     font-size: 1.2rem;
 }
 
+.mx-2 {
+    margin: 0 1.5rem;
+}
+
 .content--wrap {
     margin: 0 auto;
     max-width: 1140px;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-}
-
-.loader {
-    margin: 0 auto;
-    border: 16px solid rgb(241, 139, 165);
-    border-top: 16px solid rgb(5, 9, 66);
-    border-radius: 100%;
-    width: 260px;
-    height: 260px;
-    animation: spin 2s linear infinite;
-    transform: translateX(-50%);
-}
-  
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 /***** NAVIGATION *****/
@@ -118,11 +102,11 @@ nav a:hover {
 
 .endorsed {
     border-left: 8px solid #F1a028;
+    font-family: 'Lobster', cursive;
 }
 
 .signed {
     font-size: .8rem;
-    font-style: italic;
     display: block;
     line-height: 2rem;
 }
@@ -144,7 +128,7 @@ main {
 
 .shadow {
     color: #fff;
-    text-shadow: 2px 2px 8px #000;
+    text-shadow: 2px 2px 1px #000;
 }
 
 .blurb {
@@ -162,7 +146,7 @@ main {
 
 .bestseller {
     width: 200px;
-    border: 4px solid #F1a028;
+    border: 6px solid #F1a028;
     border-radius: 25px;
     text-decoration: none;
     text-align: center;
@@ -177,7 +161,7 @@ main {
     width: 120px;
 }
 
-i {
+.fa-hand-holding-heart {
     color: rgb(245, 24, 24);
     font-size: 6.5rem;
     margin-left: 2rem;
@@ -228,13 +212,19 @@ footer {
 .product--text__sale {
     margin: 0;
     padding: 0;
-    font-size: 3rem;
+    font-size: 2rem;
     position: absolute;
     right: 5%;
     top: 5%;
     text-decoration: none;
     text-transform: uppercase;
-    color: #eeff00;
+    color: #F1a028;
+    font-weight: bold;
+}
+
+.product--container i {
+    color: #F1a028;
+    font-size: 2.3rem;
 }
 
 /** INDIVIDUAL PRODUCT **/
@@ -247,7 +237,6 @@ footer {
     display: flex;
     justify-content: center;
     flex-flow: row nowrap;
-    min-height: 800px;
 }
 
 .product--image {
@@ -274,7 +263,6 @@ footer {
 
 .product--onsale {
     text-decoration: line-through;
-    margin-right: 1rem;
 }
 
 .product--onsale__nodisplay {
@@ -283,10 +271,14 @@ footer {
 
 .stock__yes {
     color: green;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .stock__no {
     color: red;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 #quantity--select {
@@ -302,7 +294,8 @@ footer {
     border-radius: 25px;
     border: 1px solid black;
     box-shadow: none;
-    padding: 2rem 3rem;
+    font-size: 1.6rem;
+    padding: 1.4rem 2.3rem;
     cursor: pointer;
 }
 
@@ -316,8 +309,8 @@ footer {
 .other--heading {
     text-align: center;
     max-width: 350px;
-    font-size: 1.4rem;
-    margin: 0 auto;
+    font-size: 1.5rem;
+    margin: 2rem auto 0 auto;
 }
 
 /***** MEDIA QS *****/
@@ -398,7 +391,7 @@ footer {
         align-items: center;
     }
 
-    .fas {
+    .fa-hand-holding-heart {
         display: none;
     }   
 

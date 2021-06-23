@@ -5,26 +5,45 @@ const querystring = document.location.search;
 const params = new URLSearchParams(querystring);
 const productId = params.get("id");
 
+// Event that pops when the html is done, so I can add eventlisteners to the dynamically built elements
 function documentReady() {
     const myEvent = new Event("doc-ready-ish");
     document.body.dispatchEvent(myEvent);
 };
 
+// Adds the productID and the quantity selected to the querystring for order.html
+function placeOrder() {
+    const select = document.querySelector("#quantity--select");
+    const quantity = select.value;
+    location.href = `order.html?id=${productId}&quantity=${quantity}`;
+}
+
+// Listener for dispatched event, adds clickevent to dynamically built order button
+document.body.addEventListener("doc-ready-ish", function () {
+    const button = document.querySelector(".cart");
+    button.addEventListener("click", function (event) {
+        event.preventDefault();
+        placeOrder();
+    });
+});
+
+// Product details page
 function createHTML(myArray) {
     productContainer.innerHTML = "";
     for (var i = 0; i < myArray.length; i++) {
         if (myArray[i].id === productId) {
             const product = myArray[i];
-            const id = product.id;
             const name = product.name;
             const description = product.description;
-
             const image = product.image.sm;
             const alt = product.image.alt;
+            const materials = product.materials;
+            const carryPositions = product.positions;
 
             const price = product.price.dollar.amount;
             const price_symbol = product.price.dollar.currency;
-            let discount = product.price.discountpct / 100;
+            let discount = product.price.discountpct;
+            let newPrice = Math.floor(price - (price * discount / 100));
             let saleStatus;
             let salePrice;
             if (discount > 0) {
@@ -53,9 +72,6 @@ function createHTML(myArray) {
             const minWeightLb = product.weight.min.lb;
             const maxWeightsLb = product.weight.max.lb;
             const weight = `${minWeightKg} to ${maxWeightKg}kg (${minWeightLb} to ${maxWeightsLb}lb).`;
-
-            const materials = product.materials;
-            const carryPositions = product.positions;
 
             let wash = product.machinewash;
             if (wash) {
@@ -89,11 +105,14 @@ function createHTML(myArray) {
                         <h2>${name}</h2>
                         <p>
                             <span class="${saleStatus}">${price_symbol}${price}</span>
-                            <span class="${salePrice}">
-                                <strong>${price_symbol}${Math.floor(price - (price * discount))}.00</strong>
+                            <span class="${salePrice} mx-2">
+                                <strong>${price_symbol}${newPrice}.00</strong>                  
+                            </span>
+                            <span class="${salePrice} stock__yes">
+                                ${discount}% sale <i class="fas fa-comment-dollar"></i>
                             </span>
                         </p>
-                        <p class="${stockColor}">${stock.toUpperCase()}</p>
+                        <p class="${stockColor}">${stock}</p>
                         <p class="para">${description}</p>
                         <div> 
                             <select name="quantity" id="quantity--select">
@@ -102,7 +121,7 @@ function createHTML(myArray) {
                                 <option value="3">3</option>
                                 <option value="4">4</option>                         
                             </select>
-                            <button class="cart"><span class="shadow">Add to cart</span></button>                            
+                            <button class="cart shadow">Add to cart</button>                            
                         </div>
                         <p class="para"><span class="stock__yes">01:28:54</span> for order to ship today.</p>
                         <h3>Additional info</h3>
@@ -112,43 +131,34 @@ function createHTML(myArray) {
                         <p class="para"><strong>Materials</strong>: ${materials}</p>
                         <p class="para"><strong>Machine wash</strong>:${wash}</p>
                         <p class="para"><strong>Tumbledry</strong>:${tumbledry}</p>                      
-                    </div>
-                    
+                    </div>                   
                 </div>
             `
-            otherHeading.innerHTML = `People who bought ${name} also viewed:`;
+            otherHeading.innerHTML = `People who bought the ${name} also viewed:`;
             document.title = `${name} product page`;
         } else {
             const product = myArray[i];
             const name = product.name;
             const image = product.image.sm;
             const id = product.id;
-            const link = `detailed.html?id=${id}`
+            const link = `detailed.html?id=${id}`;
+            let discount = product.price.discountpct;
+            let sale = "product--onsale__nodisplay";
+            if (discount > 0) {
+                sale = "product--text__sale";
+            }
 
             otherProducts.innerHTML +=
                 `                
                 <a href="${link}" class="product--display" style="background-image: url(${image})">
                     <h2 class="product--text shadow">${name}</h2>
+                    <p class="${sale}"><i class="fas fa-comment-dollar"> sale </i></p>
                 </a>
             `
         }  // End of if/else statement
     }; // End of for loop
-    documentReady();
+    documentReady(); // Dispatch event
 };
-
-function placeOrder() {
-    const select = document.querySelector("#quantity--select");
-    const quantity = select.value;
-    location.href = `order.html?id=${productId}&quantity=${quantity}`;
-}
-
-document.body.addEventListener("doc-ready-ish", function () {
-    const button = document.querySelector(".cart");
-    button.addEventListener("click", function (event) {
-        event.preventDefault();
-        placeOrder();
-    });
-});
 
 createHTML(productArray);
 
