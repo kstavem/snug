@@ -88,7 +88,7 @@ function createHTML(myArray) {
 
             productContainer.innerHTML +=
                 `
-                <p class="pagination"><a href="product.html">Products</a> &gt <a href="${window.location.href}">${name}</a></p>
+                <p class="link--pagination"><a href="product.html">Products</a> &gt <a href="${window.location.href}">${name}</a></p>
 
                 <div class="product--details">
                     <div>
