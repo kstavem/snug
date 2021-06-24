@@ -48,6 +48,10 @@ li {
     align-items: center;
 }
 
+.relative {
+    position: relative;
+}
+
 /***** NAVIGATION *****/
 
 .logo {
@@ -371,14 +375,26 @@ form .cart {
     min-width: 100px;
 }
 
-#order--confirm__lg, #order--confirm__sm {
-    max-width: 310px;
-    padding: 5px;
+#order--confirm__lg{
+    margin: 2rem auto;
+}
+
+.order--success {
+    color: green;
+}
+
+.order--error {
+    color: red;
 }
 
 #snug--product {
     font-size: 1.4rem;
 }
+
+#order--price__total {
+    font-weight: bold;
+    font-size: 1.2rem;
+} 
 
 
 /***** MEDIA QS *****/
@@ -485,6 +501,10 @@ form .cart {
         width: 310px;
     }
 
+    .flex--order img {
+        margin-bottom: 1rem;
+    }
+
     .unicef {
         display: none;
     }
@@ -510,9 +530,17 @@ form .cart {
 
     form {
         max-width: 310px;
+        margin: 0 auto;
     }
 
     form input {
         max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .para {
+        max-width: 310px;
+        margin: 0 auto;
     }
 }

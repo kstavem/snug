@@ -31,20 +31,18 @@
 
         <div class="content--wrap">
             <div class="flex flex--order">
-                <div>
-                    <img src="assets/images/baby-carrier-infant-nature_sm.jpg" alt="asdf" class="product--image" />
-                    <p class="para stock__yes nodisplay" id="order--confirm__lg">
-                        Congratulations on purchasing a new Snug Baby Sling. Snug has donated 5%
-                        on your behalf to UNICEF. Thank you!</p>
-                </div>
+                <img src="" alt="" class="product--image" />
                 <div class="flex--col">
                     <div class="flex--col">
                         <p><span class="order--text">Item:</span>
                             <select name="snug" id="snug--product">
-                                <option selected>Select product</option>
                             </select>
                         </p>
-                        <p><span class="order--text">Price:</span> <span id="order--price">$80.00</span></p>
+                        <p>
+                            <span class="order--text">Price: </span>
+                            <span class="order--currency"></span>
+                            <span id="order--price"></span>
+                        </p>
                         <p><span class="order--text">Quantity:</span>
                             <select name="quantity" id="quantity--select">
                                 <option value="1">1</option>
@@ -53,7 +51,10 @@
                                 <option value="4">4</option>
                             </select>
                         </p>
-                        <p><span class="order--text">Sum total:</span><span id="order--price__total">$80.00</span>
+                        <p>
+                            <span class="order--text">Sum total:</span>
+                            <span class="order--currency"></span>
+                            <span id="order--price__total"></span>
                         </p>
 
                     </div>
@@ -66,12 +67,9 @@
                         <input type="email" name="email" placeholder="Email" id="email">
                         <button class="cart shadow">Order</button>
                     </form>
+                    <div class="nodisplay" id="order--confirm__lg"></div>
                 </div>
-
             </div>
-            <p class="para stock__yes nodisplay" id="order--confirm__sm">
-                Congratulations on purchasing a new Snug Baby Sling. Snug has donated 5%
-                on your behalf to UNICEF. Thank you!</p>
             <a href="product.html" class="link--pagination">&gt Back to shopping</a>
         </div>
     </main>
