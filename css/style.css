@@ -61,6 +61,11 @@ li {
     font-size: 4rem;
 }
 
+#home--logo, #home--logo:hover {
+    text-decoration: none;
+}
+
+
 nav {
     display: flex; 
     justify-content: space-between;
@@ -123,6 +128,7 @@ nav a:hover {
 main {
     margin: 85px auto 0 auto;
     max-width: 1140px;
+    min-height: calc(100vh - 170px);
 }
 
 .banner {
