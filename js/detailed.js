@@ -97,7 +97,7 @@ function createHTML(myArray) {
                             <p class="para">
                                 <strong>Snug</strong> cares deeply about the wellbeing of children. The company donates 5% of every purchase made to the <span>United Nations Children's Fund</span> (<a href="#">UNICEF</a>).
                             </p>
-                            <img src="assets/images/unicef-logo.png" alt="unicef logo" class="unicef--logo">
+                            <img src="assets/images/unicef-logo.svg" alt="unicef logo" class="unicef--logo">
                         </div>
                     </div>
 
